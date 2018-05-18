@@ -1,0 +1,275 @@
+.g-timeline{
+	max-width: 600px
+
+}
+
+.center-ele{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.g-time{
+	color: #ea1717;
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	letter-spacing: 1.5px;
+	-webkit-font-smoothing: antialiased!important;
+
+}
+
+.g-here-container{
+	position: absolute;
+	right: -10px;
+	top: -20px;
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	border-radius: 50%;
+	color: white;
+	letter-spacing: 1.5px;
+	font-weight: 600;
+	font-size: 12px;
+	padding-top: 17px;
+	border: 1px solid #282828;
+	background-color: #ea1717;
+	animation: bg-color 2.5s infinite;
+  	-webkit-animation: bg-color 2.5s infinite;
+  	@media only screen and (max-width: 400px) {
+		right: -5px;
+		top: -30px;
+	}
+}
+
+.g-timeline-hed{
+	padding-bottom: 10px;
+	max-width: 857px;
+	margin-top: 40px;
+	background-color: white;
+	border-bottom: #282828 solid 2px;
+}
+
+.g-legend-wrapper{
+    margin-right: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    @media only screen and (max-width: 400px) {
+		font-size: 14px;
+		text-align: left;
+		margin-right: 6px;
+	}
+    .key{
+    	width: 15px;
+	    height: 15px;
+	    display: inline-block;
+	    border: 1px solid #282828;
+	    vertical-align: middle;
+	    line-height: 15px;
+    }
+
+    .g-check{
+    	width: 18px;
+		height: 18px;
+		padding: 3px;
+		display: inline-block;
+		position: relative;
+		background-color: #949494;
+    }
+}
+
+#count-down{
+	position: sticky;
+	width: 130px;
+	height: auto;
+	text-align: center;
+	padding: 5px;
+	bottom: 50px;
+	/*margin-left: 40px;*/
+	background-color: white;
+	border: 2px #282828 solid;
+	@media only screen and (max-width: 400px) {
+		bottom: 5px;
+		width: 110px;
+		font-size: 12px;
+	}
+}
+
+article{
+	position: relative;
+}
+
+.key{
+	padding-right: 3px;
+    margin: 10px auto;
+    width: auto;
+    vertical-align: middle;
+    line-height: 15px;
+}
+
+
+
+.g-active {
+  z-index: 2000;
+  position: sticky;
+  position: -webkit-sticky;
+  top: -1px;
+  width: 100%;
+  margin-top:-1px;
+  padding-top: 10px;
+
+}
+
+.here{
+	border: 2px solid #282828;
+}
+
+@-webkit-keyframes bg-color {
+  0% { background-color: #e74c3c; }
+  20% { background-color: #f1c40f; }
+  40% { background-color: #1abc9c; }
+  60% { background-color: #3498db; }
+  80% { background-color: #9b59b6; }
+  100% { background-color: #e74c3c; }
+}
+
+@keyframes bg-color {
+  0% { background-color: #e74c3c; }
+  20% { background-color: #f1c40f; }
+  40% { background-color: #1abc9c; }
+  60% { background-color: #3498db; }
+  80% { background-color: #9b59b6; }
+  100% { background-color: #e74c3c; }
+}
+
+.Negotiation{
+	background-color: #fff0f0;
+}
+
+.Reporting{
+	background-color: #e3f5f4;
+}
+
+.Congressional{
+	background-color: #f5f7e2;
+}
+
+.g-step{
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.25em;
+	-webkit-font-smoothing: antialiased!important;
+	@media only screen and (max-width: 400px) {
+		font-size: 20px;
+	}
+}
+
+.g-note{
+	color: #666;
+	margin-top: 10px;
+	@media only screen and (max-width: 400px) {
+		font-size: 16px;
+	}
+}
+
+.g-timeline-ele{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	position: relative;
+}
+
+.g-timeline-ele:first-of-type {
+    margin-top: 60px;
+}
+
+#g-days{
+	font-weight: 800;
+	-webkit-font-smoothing: antialiased!important;
+}
+
+
+
+.g-arrow-container{
+	width: 20px;
+	height: 60px;
+	padding: 5px;
+	.g-arrow{
+		width: 100%;
+    	height: 100%;
+	/*	background-color: blue;*/
+		background-image: url(../images/arrow.png);
+		background-repeat: no-repeat;
+	    background-size: cover;
+	}
+}
+.g-arrow-container:last-of-type{
+	display: none;
+}
+
+
+.g-check{
+	width: 30px;
+    height: 30px;
+    padding: 3px;
+    position: absolute;
+	right:0px;
+	top: 0px;
+    background-color: #949494;
+	.g-done{
+		background-image: url(../images/checkmark.png);
+    	background-repeat: no-repeat;
+    	background-size: cover;
+    	width: 100%;
+    	height: 100%;
+	}
+	@media only screen and (max-width: 400px) {
+		width: 23px;
+    	height: 23px;
+	}
+}
+
+@import "~politico-style/scss/base/main.scss"
+//hi, add css here
+
+// ----  Breakpoints for your reference---- //
+//$min-width-xs: 350px;
+//$min-width-sm: 576px;
+//$min-width-md: 768px;
+//$min-width-lg: 992px;
+//$min-width-xl: 1200px;
+
+
+// ----  Min Width Declarations ---- //
+// Extra small devices (portrait phones, less than 350px) - note the default media query is at 576px, this is here to control for mini-phones.
+//@media (min-width: 350px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+//@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+//@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+//@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+//@media (min-width: 1200px) { ... }
+
+
+// ----  Max Width Declarations (if you must) ---- //
+// Extra small devices (portrait phones, less than 576px)
+//@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+//@media (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, less than 992px)
+//@media (max-width: 991.98px) { ... }
+
+// Large devices (desktops, less than 1200px)
+//@media (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width

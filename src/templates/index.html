@@ -1,0 +1,138 @@
+{% macro jpg(name, alt='Image') %}
+<img
+  src="images/{{ name }}-1800.jpg"
+  srcset="images/{{ name }}-400.jpg 400w, images/{{ name }}-800.jpg 800w, images/{{ name }}-1200.jpg 1200w, images/{{ name }}-1800.jpg 1800w"
+  alt="{{ alt }}"
+/>
+{% endmacro %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8">
+        <title>{{META.page_name}}</title>
+        {%include "meta/_icons.html"%}
+
+        {%include "meta/_social.html"%}
+        {% if env == 'production' %}
+        <link href="css/main-app.css" rel="stylesheet">
+        {% endif %}
+
+        <link rel="stylesheet" type="text/css" href="https://www.politico.com/interactives/cdn/fonts/battletoads/icons/politico-battletoads-icons.min.css">
+        <link rel="stylesheet" href="../css/base/main.css">
+        <!-- jQuery -->
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+          crossorigin="anonymous">
+        </script>
+        <!--Typekit-->
+        <!-- DIN 2014 only -->
+        <link rel="stylesheet" href="https://use.typekit.net/dsx2uhv.css">
+        <!-- Jubilat include -->
+        <!-- <link rel="stylesheet" href="https://use.typekit.net/bvr3gvp.css"> -->
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    </head>
+
+    <body>
+      {% include "partials/nav.html" %}
+      {% include "ads/_banner1.html" %}
+      {% include "partials/header.html" %}
+
+
+      <article class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra nunc id mi porta, blandit ullamcorper orci auctor. Vestibulum viverra, eros eu vehicula ullamcorper, elit dolor gravida turpis, ac consectetur enim sem eu justo. In feugiat tempor leo sed dignissim. Ut id tellus justo.</p>
+
+        <p>Curabitur orci nisi, pulvinar et rutrum sed, scelerisque eget urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque justo ante, dignissim id mauris in, sollicitudin ultrices nunc. Donec faucibus mauris at risus varius, at faucibus arcu ultricies. Nam sed pellentesque mi.</p>
+
+        <div class="g-timeline-hed center-ele" id="g-sticky">
+          <div class="g-legend-wrapper">
+            <div class="Negotiation key"></div>
+            Negotiation
+          </div>
+          <div class="g-legend-wrapper">
+            <div class="Reporting key"></div>
+            Reporting and mock markup
+          </div>
+          <div class="g-legend-wrapper">
+            <div class="Congressional key"></div>
+            Congressional Consideration and implementation
+          </div>
+          <div class="g-legend-wrapper">
+
+            <div class="g-check">
+              <div class="g-done"></div>
+            </div>
+            Done
+          </div>
+        </div>
+        
+
+          <div class="g-timeline center-ele">
+
+            {% for item in DATA["Sheet1"] %}
+            <div class="g-timeline-ele {{ item.category }} {{ item.here }}">
+              {% if item['time'] %}
+                 <div class="g-time">{{item['time']}}</div>
+              {% endif %}
+              {% if item['here'] == "here" %}
+                 <div class="g-here-container">We are here</div>
+              {% elseif item['here'] == "past" %}
+                <div class="g-check">
+                  <div class="g-done"></div>
+                </div>
+              {% endif %}
+              <div>
+              <div class="g-step">{{item['step']}}</div>
+              {% if item['note'] %}
+                <div class="g-note">{{item['note']}}</div>
+              </div>
+              {% endif %}
+            </div>
+
+            
+            <div class="g-arrow-container center-ele">
+              <div class="g-arrow"></div>
+            </div>
+            {% endfor %}
+
+          </div>
+      <div id="count-down">
+        <span id="g-days">TK days</span> till NAFTA deadline
+      </div>    
+      
+
+
+      {% include "meta/_comments.html" %}
+      </article>
+
+
+        {% include "partials/footer.html" %}
+        <script type="text/javascript">window.tweetText = "{{META.share.twitter.share_tweet}}";</script>
+    </body>
+</html>
+
+
+
+{% block js %}
+<script type="text/javascript" src="js/main-app.bundle.js"></script>
+<script>
+window.onscroll = function() {header()};
+
+var navbar = document.getElementById("g-sticky");
+var sticky = navbar.offsetTop;
+
+
+
+
+function header() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("g-active")
+  } else {
+    navbar.classList.remove("g-active");
+  }
+}
+</script>
+{% endblock %}
