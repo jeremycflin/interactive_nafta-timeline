@@ -47,7 +47,15 @@
 
         <p>Curabitur orci nisi, pulvinar et rutrum sed, scelerisque eget urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque justo ante, dignissim id mauris in, sollicitudin ultrices nunc. Donec faucibus mauris at risus varius, at faucibus arcu ultricies. Nam sed pellentesque mi.</p>
 
-        <div class="g-timeline-hed center-ele" id="g-sticky">
+        <div id="count-down" class="center-ele">
+          <!-- <span id="g-days">TK days</span> -->
+          <input id="display" class="light"/> till end of congressional session
+        </div>
+
+        
+  
+
+<!--         <div class="g-timeline-hed center-ele" id="g-sticky">
           <div class="g-legend-wrapper">
             <div class="Negotiation key"></div>
             Negotiation
@@ -67,10 +75,23 @@
             </div>
             Done
           </div>
-        </div>
-        
+        </div> -->
+         
 
           <div class="g-timeline center-ele">
+            <div class="connection">
+              <div class="side-wrapper">
+                <div class="sidenote Negotiation"></div>
+                Negotiation
+              </div>
+
+              <div class="side-wrapper right"> Done
+                <div class="g-check darkerNegotiation">
+               
+                  <div class="g-done"></div>
+                </div>
+            </div>
+            </div>
 
             {% for item in DATA["Sheet1"] %}
             <div class="g-timeline-ele {{ item.category }} {{ item.here }}">
@@ -92,16 +113,34 @@
               {% endif %}
             </div>
 
-            
+            {% if item['sideKey'] %}
+           
+              <div class="g-arrow-container center-ele">
+                <div class="g-arrow"></div>
+              </div>
+              <div class='connection'>
+
+                <div class="side-wrapper">
+                  <div class="sidenote {{ item.sideKey }}"></div>
+                  {{item['sideKey']}}
+                </div>
+                <div class="side-wrapper right"> Done
+                  <div class="g-check darker{{ item.sideKey }}">
+
+                    <div class="g-done"></div>
+                    
+                  </div>
+                </div>
+            </div>
+            {% else %}
             <div class="g-arrow-container center-ele">
               <div class="g-arrow"></div>
             </div>
+            {% endif %}
             {% endfor %}
 
           </div>
-      <div id="count-down">
-        <span id="g-days">TK days</span> till NAFTA deadline
-      </div>    
+     
       
 
 
@@ -114,25 +153,14 @@
     </body>
 </html>
 
+ <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- flipper -->
 
+  <script src="../images/jquery.flapper.js"></script>
+  <!-- transform -->
+  <script src="../images/jquery.transform-0.9.3.min.js"></script>
 
 {% block js %}
 <script type="text/javascript" src="js/main-app.bundle.js"></script>
-<script>
-window.onscroll = function() {header()};
-
-var navbar = document.getElementById("g-sticky");
-var sticky = navbar.offsetTop;
-
-
-
-
-function header() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("g-active")
-  } else {
-    navbar.classList.remove("g-active");
-  }
-}
-</script>
 {% endblock %}

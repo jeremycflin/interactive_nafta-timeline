@@ -1,12 +1,19 @@
 .g-timeline{
-	max-width: 600px
+	max-width: 600px;
+	display: block;
+	position: relative;
+	overflow:visible !important;
+}
 
+article{
+	overflow:visible !important;
 }
 
 .center-ele{
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+	overflow:visible !important;
 }
 
 .g-time{
@@ -21,6 +28,7 @@
 
 .g-here-container{
 	position: absolute;
+	overflow:visible !important;
 	right: -10px;
 	top: -20px;
 	width: 70px;
@@ -80,20 +88,15 @@
 }
 
 #count-down{
-	position: sticky;
-	width: 130px;
 	height: auto;
 	text-align: center;
-	padding: 5px;
-	bottom: 50px;
-	/*margin-left: 40px;*/
 	background-color: white;
-	border: 2px #282828 solid;
-	@media only screen and (max-width: 400px) {
-		bottom: 5px;
-		width: 110px;
-		font-size: 12px;
-	}
+	font-size: 20px;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	max-width: 600px;
+	border-bottom: 2px solid #282828;
 }
 
 article{
@@ -122,7 +125,7 @@ article{
 }
 
 .here{
-	border: 2px solid #282828;
+	border: 2px solid #282828 !important;
 }
 
 @-webkit-keyframes bg-color {
@@ -144,21 +147,35 @@ article{
 }
 
 .Negotiation{
-	background-color: #fff0f0;
+	background-color: #fff0f0;	
+    border: #f98383 solid 1px;
+    .g-check{	
+		background-color: #f98383;
+    }
 }
 
 .Reporting{
 	background-color: #e3f5f4;
+	border: #40abcc solid 1px;
+    .g-check{	
+		background-color: #40abcc;
+    }
+	
 }
 
 .Congressional{
-	background-color: #f5f7e2;
+	background-color: #fffce6;
+	border: #e0cb2a solid 1px;
+    .g-check{	
+		background-color: #e0cb2a;
+    }
 }
 
 .g-step{
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 1.25em;
+	max-width: 500px;
 	-webkit-font-smoothing: antialiased!important;
 	@media only screen and (max-width: 400px) {
 		font-size: 20px;
@@ -186,6 +203,9 @@ article{
 
 #g-days{
 	font-weight: 800;
+	font-size: 30px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
 	-webkit-font-smoothing: antialiased!important;
 }
 
@@ -198,7 +218,6 @@ article{
 	.g-arrow{
 		width: 100%;
     	height: 100%;
-	/*	background-color: blue;*/
 		background-image: url(../images/arrow.png);
 		background-repeat: no-repeat;
 	    background-size: cover;
@@ -228,6 +247,388 @@ article{
 		width: 23px;
     	height: 23px;
 	}
+}
+
+
+.connection{
+
+	width: auto;
+	z-index: 4000;
+  	top: 0px;
+  	width: 100%;
+  	margin-top:-1px;
+  	padding-top: 10px;
+  	padding-bottom: 10px;
+  	background-color: white;
+ 	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	position: sticky;
+  	/*font-weight: 600;*/
+	.sidenote{
+		font-size: 16px;
+		top: 0px;
+		color: #282828;
+		width: 15px;
+   		height: 15px;
+
+	    display: inline-block;
+	    line-height: 15px;
+  	
+	}
+
+	.side-wrapper{
+		display: inline-block;
+		font-weight: 600;
+	}
+
+	.g-check{
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		vertical-align: text-bottom;
+		position: relative;
+
+
+	}
+
+	.right{
+		float: right;
+		font-weight: 400;
+	}
+
+	.darkerReporting{
+		background-color: #40abcc;
+	}
+
+	.darkerCongressional{
+		background-color: #e0cb2a;
+	}
+
+	.darkerNegotiation{
+		background-color: #f98383;
+	}
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);
+
+/* STRUCTURAL STYLES */
+
+.flapper {
+    /*font-family: $franklin;*/
+    font-weight: 600;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    /*@media only screen and (max-width: $nav-breakpoint) {
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+
+    @media only screen and (max-width: 769px) {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    @media only screen and (max-width: 730px) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    @media only screen and (max-width: 570px) {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }*/
+}
+
+.flapper .digit {
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+.flapper .digit div {
+    position: absolute;
+    text-align: center;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+.flapper .digit .top {
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.flapper .digit .bottom {
+    bottom: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+/* SIZE STYLES */
+
+/* XXL 96x128 */
+
+.flapper.XXL {
+    font-size: 116px;
+    line-height: 123px;
+    height: 132px;
+}
+
+.flapper.XXL .digit {
+    border-radius: 8px;
+}
+
+.flapper.XXL .digit div {
+    border-radius: 6px;
+}
+
+.flapper.XXL .digit,
+.flapper.XXL .digit div {
+    height: 128px;
+    width: 96px;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.flapper.XXL .digit .top {
+    clip: rect(0px, 96px, 64px, 0px);
+}
+
+.flapper.XXL .digit .bottom {
+    clip: rect(65px, 96px, 128px, 0px);
+}
+
+/* XL 72x96 */
+
+.flapper.XL {
+    font-size: 85px;
+    line-height: 92px;
+    font-weight: 600;
+    /*height: 100px;
+*/}
+
+.flapper.XL .digit {
+    border-radius: 7px;
+    margin: 0 0 0 4px;
+}
+
+.flapper.XL .digit:first-child {
+    margin: 0;
+}
+
+.flapper.XL .digit div {
+    border-radius: 5px;
+}
+
+.flapper.XL .digit,
+.flapper.XL .digit div {
+    height: 96px;
+    width: 72px;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.flapper.XL .digit .top {
+    clip: rect(0px, 72px, 47px, 0px);
+}
+
+.flapper.XL .digit .bottom {
+    clip: rect(48px, 72px, 96px, 0px);
+}
+
+/* L 54x72 */
+
+.flapper.L {
+    font-size: 66px;
+    line-height: 70px;
+    height: 76px;
+}
+
+.flapper.L .digit {
+    border-radius: 6px;
+    margin: 0 0 0 4px;
+}
+
+.flapper.L .digit:first-child {
+    margin: 0;
+}
+
+.flapper.L .digit div {
+    border-radius: 4px;
+}
+
+.flapper.L .digit,
+.flapper.L .digit div {
+    height: 72px;
+    width: 54px;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.flapper.L .digit .top {
+    clip: rect(0px, 54px, 35px, 0px);
+}
+
+.flapper.L .digit .bottom {
+    clip: rect(36px, 54px, 72px, 0px);
+}
+
+/* M 40x54 (default) */
+
+.flapper {
+    font-size: 51px;
+    line-height: 52px;
+    height: 58px;
+}
+
+.flapper .digit {
+    border-radius: 5px;
+    margin: 0 0 0 4px;
+}
+
+.flapper .digit:first-child {
+    margin: 0;
+}
+
+.flapper .digit div {
+    border-radius: 3px;
+}
+
+.flapper .digit,
+.flapper .digit div {
+    height: 54px;
+    width: 40px;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.flapper .digit .top {
+    clip: rect(0px, 40px, 26px, 0px);
+}
+
+.flapper .digit .bottom {
+    clip: rect(27px, 40px, 54px, 0px);
+}
+
+/* S 30x40 */
+
+.flapper.S {
+    font-size: 36px;
+    line-height: 39px;
+    height: 44px;
+}
+
+.flapper.S .digit {
+    border-radius: 4px;
+    margin: 0 0 0 2px;
+}
+
+.flapper.S .digit:first-child {
+    margin: 0;
+}
+
+.flapper.S .digit div {
+    border-radius: 2px;
+}
+
+.flapper.S .digit,
+.flapper.S .digit div {
+    height: 40px;
+    width: 30px;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.flapper.S .digit .top {
+    clip: rect(0px, 30px, 19px, 0px);
+}
+
+.flapper.S .digit .bottom {
+    clip: rect(20px, 30px, 40px, 0px);
+}
+
+/* XS 24x30 */
+
+.flapper.XS {
+    font-size: 28px;
+    line-height: 30px;
+    height: 34px;
+}
+
+.flapper.XS .digit {
+    border-radius: 3px;
+    margin: 0 0 0 2px;
+}
+
+.flapper.XS .digit:first-child {
+    margin: 0;
+}
+
+.flapper.XS .digit div {
+    border-radius: 1px;
+}
+
+.flapper.XS .digit,
+.flapper.XS .digit div {
+    height: 30px;
+    width: 24px;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.flapper.XS .digit .top {
+    clip: rect(0px, 24px, 14px, 0px);
+}
+
+.flapper.XS .digit .bottom {
+    clip: rect(15px, 24px, 30px, 0px);
+}
+
+/* THEME STYLES */
+
+/* DARK (default) */
+
+.flapper .digit {
+    background-color: #222;
+    border: 1px solid #333;
+}
+
+.flapper .digit div {
+    color: #f0f0f0;
+    padding: 0px;
+    background-color: #04171c;
+}
+
+/* LIGHT */
+
+.flapper.light .digit {
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+
+.flapper.light .digit div {
+    color: #222;
+    padding: 0px;
+    background-color: #f6f6f6;
+}
+
+.flapper{
+	max-width: 710px;
+	margin-right: auto;
+	margin-left: auto;
+  height: 100%;
+  @media only screen and (max-width: 740px) {
+        text-align: center !important;
+      }
 }
 
 @import "~politico-style/scss/base/main.scss"
