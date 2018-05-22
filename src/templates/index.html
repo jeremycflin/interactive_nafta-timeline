@@ -43,9 +43,15 @@
 
 
       <article class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra nunc id mi porta, blandit ullamcorper orci auctor. Vestibulum viverra, eros eu vehicula ullamcorper, elit dolor gravida turpis, ac consectetur enim sem eu justo. In feugiat tempor leo sed dignissim. Ut id tellus justo.</p>
+        <p>{{ARCHIE.P1|markdown(strip=true)}}</p>
 
-        <p>Curabitur orci nisi, pulvinar et rutrum sed, scelerisque eget urna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque justo ante, dignissim id mauris in, sollicitudin ultrices nunc. Donec faucibus mauris at risus varius, at faucibus arcu ultricies. Nam sed pellentesque mi.</p>
+        <p>{{ARCHIE.P2|markdown(strip=true)}}</p>
+
+        <p>{{ARCHIE.P3|markdown(strip=true)}}</p>
+
+        <p>{{ARCHIE.P4|markdown(strip=true)}}</p>
+
+        <p>{{ARCHIE.P5|markdown(strip=true)}}</p>
 
         <div id="count-down" class="center-ele">
           <!-- <span id="g-days">TK days</span> -->
@@ -54,30 +60,6 @@
 
         
   
-
-<!--         <div class="g-timeline-hed center-ele" id="g-sticky">
-          <div class="g-legend-wrapper">
-            <div class="Negotiation key"></div>
-            Negotiation
-          </div>
-          <div class="g-legend-wrapper">
-            <div class="Reporting key"></div>
-            Reporting and mock markup
-          </div>
-          <div class="g-legend-wrapper">
-            <div class="Congressional key"></div>
-            Congressional Consideration and implementation
-          </div>
-          <div class="g-legend-wrapper">
-
-            <div class="g-check">
-              <div class="g-done"></div>
-            </div>
-            Done
-          </div>
-        </div> -->
-         
-
           <div class="g-timeline center-ele">
             <div class="connection">
               <div class="side-wrapper">
@@ -98,6 +80,7 @@
               {% if item['time'] %}
                  <div class="g-time">{{item['time']}}</div>
               {% endif %}
+
               {% if item['here'] == "here" %}
                  <div class="g-here-container">We are here</div>
               {% elseif item['here'] == "past" %}
@@ -105,10 +88,14 @@
                   <div class="g-done"></div>
                 </div>
               {% endif %}
-              <div>
-              <div class="g-step">{{item['step']}}</div>
+                <div class="g-step">{{item['step']}}</div>
               {% if item['note'] %}
                 <div class="g-note">{{item['note']}}</div>
+              {% endif %}
+              {% if item['related'] %}
+              <div class="g-related">
+
+                <span class='g-relate-title'><a href="{{item['related']}}" target="_blank">Related coverage</a></span>
               </div>
               {% endif %}
             </div>
@@ -157,9 +144,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- flipper -->
 
-  <script src="../images/jquery.flapper.js"></script>
+  <script src="images/jquery.flapper.js"></script>
   <!-- transform -->
-  <script src="../images/jquery.transform-0.9.3.min.js"></script>
+  <script src="images/jquery.transform-0.9.3.min.js"></script>
 
 {% block js %}
 <script type="text/javascript" src="js/main-app.bundle.js"></script>

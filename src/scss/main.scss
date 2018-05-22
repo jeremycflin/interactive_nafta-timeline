@@ -7,6 +7,7 @@
 
 article{
 	overflow:visible !important;
+    margin-top: 50px;
 }
 
 .center-ele{
@@ -14,6 +15,19 @@ article{
 	margin-right: auto;
 	display: block;
 	overflow:visible !important;
+}
+
+.g-related{
+    margin-top: 12px;
+/*    font-style: italic;*/
+    font-size: 14px;
+    text-transform: uppercase;
+
+  
+/*    .g-relate-title{
+        font-weight: 600;
+
+    }*/
 }
 
 .g-time{
@@ -275,12 +289,18 @@ article{
 
 	    display: inline-block;
 	    line-height: 15px;
+       
   	
 	}
 
 	.side-wrapper{
 		display: inline-block;
 		font-weight: 600;
+       /* vertical-align: text-top;*/
+         @media only screen and (max-width: 500px) {
+            font-size: 14px;
+            max-width: 250px;
+        }
 	}
 
 	.g-check{
