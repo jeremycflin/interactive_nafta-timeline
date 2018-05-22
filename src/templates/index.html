@@ -34,11 +34,15 @@
         <!-- Jubilat include -->
         <!-- <link rel="stylesheet" href="https://use.typekit.net/bvr3gvp.css"> -->
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+          {% include "ai2html-resizer.html" %}
     </head>
 
     <body>
       {% include "partials/nav.html" %}
+
       {% include "ads/_banner1.html" %}
+      <div class="lede-art center-ele">{% include 'lede.html' %}</div>
       {% include "partials/header.html" %}
 
 
@@ -46,13 +50,9 @@
         <p>{{ARCHIE.P1|markdown(strip=true)}}</p>
 
         <p>{{ARCHIE.P2|markdown(strip=true)}}</p>
-
+         {% include "ads/_cube1.html" %}
         <p>{{ARCHIE.P3|markdown(strip=true)}}</p>
-
-        <p>{{ARCHIE.P4|markdown(strip=true)}}</p>
-
-        <p>{{ARCHIE.P5|markdown(strip=true)}}</p>
-
+     
         <div id="count-down" class="center-ele">
           <!-- <span id="g-days">TK days</span> -->
           <input id="display" class="light"/> till end of congressional session
@@ -100,7 +100,7 @@
               {% endif %}
             </div>
 
-            {% if item['sideKey'] %}
+            {% if item['sideKey'] and item['here'] == "past"%}
            
               <div class="g-arrow-container center-ele">
                 <div class="g-arrow"></div>
@@ -119,6 +119,18 @@
                   </div>
                 </div>
             </div>
+            {% elseif  item['sideKey'] %}
+            <div class="g-arrow-container center-ele">
+                <div class="g-arrow"></div>
+              </div>
+              <div class='connection'>
+
+                <div class="side-wrapper">
+                  <div class="sidenote {{ item.sideKey }}"></div>
+                  {{item['sideKey']}}
+                </div>
+
+            </div>
             {% else %}
             <div class="g-arrow-container center-ele">
               <div class="g-arrow"></div>
@@ -127,7 +139,7 @@
             {% endfor %}
 
           </div>
-     
+          <div class="designer center-ele">Design and development by <a href="https://twitter.com/Jeremy_CF_Lin?lang=en" target="_blanky">Jeremy C.F. Lin</a></div>
       
 
 

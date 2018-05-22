@@ -59,11 +59,16 @@ article{
 	animation: bg-color 2.5s infinite;
   	-webkit-animation: bg-color 2.5s infinite;
   	@media only screen and (max-width: 400px) {
-		right: -5px;
+		right: -2px;
 		top: -30px;
 	}
 }
-
+.lede-art{
+    max-width: 390px;
+    @media only screen and (max-width:400px) {
+        max-width: 270px;
+    }
+}
 .g-timeline-hed{
 	padding-bottom: 10px;
 	max-width: 857px;
@@ -299,7 +304,7 @@ article{
        /* vertical-align: text-top;*/
          @media only screen and (max-width: 500px) {
             font-size: 14px;
-            max-width: 250px;
+           /* max-width: 250px;*/
         }
 	}
 
@@ -329,6 +334,11 @@ article{
 	.darkerNegotiation{
 		background-color: #f98383;
 	}
+}
+
+.designer{
+    max-width: 600px;
+    margin-top: 40px;
 }
 
 
